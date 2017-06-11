@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.0" uuid="memorygame">
+ <names>
+  <name lang="en_US">MemoryGame</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">Remember you family</description>
+ </descriptions>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>es_ES</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="behavior_1">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <names>
+    <name lang="en_US">MemoryGame</name>
+   </names>
+   <loadingResponses>
+    <sentence lang="en_US">Oh, who are you?</sentence>
+    <sentence lang="en_US">Do I know you?</sentence>
+   </loadingResponses>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement minVersion="2.5"/>
+  <robotRequirement model="JULIETTE"/>
+ </requirements>
+</package>

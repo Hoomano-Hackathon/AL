@@ -1,0 +1,27 @@
+topic: ~MemoryGame()
+language: enu
+
+# Defining extra concepts out of words or group of words
+concept:(yes) [yes okay sure yeah yep]
+concept:(no) [no nope non "no way"]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u:(e:onStart) Hi, let's see if you find a picture of $MemG/selectedPerson
+
+u:(e:onMemGAnswerIsRight) So you are right, that is $MemG/selectedPerson $MemG/talkabout=1
+u:(e:onMemGAnswerIsWrong) $TabletView=wrongAnswer So you are wrong, you picked $MemG/personanswer instead of $MemG/selectedPerson \pau=450\ please try again.
+
+u:(e:onMemGTalkAboutChris) $TabletView=ChrisPage1 \rspd=86\Chris is a nice person \pau=350\Chris is Lydie’s husband. $TabletView=ChrisPage2 \pau=750\Chris is an art teacher, he loves creating decorating. $TabletView=ChrisPage3 \pau=750\Chris  lives in Lyon  with Alex his brother in law and Lydie his wife. $onFinished=1
+
+u:(e:onMemGTalkAboutLydie) $TabletView=LydiePage1 \rspd=86\Lydie is a nice person  \pau=350\She is your grand daughter, Jean-Marc’s child. $TabletView=LydiePage2 \pau=750\She was an art teatcher and she likes playing with paint $TabletView=LydiePage3 \pau=750\Lydie lives in Lyon  with Alex her brother and Chris her husband. $onFinished=1
+
+u:(e:onMemGTalkAboutAlex) $TabletView=AlexPage1 \rspd=86\Alex is a nice person \pau=350\Alex is your grand-son, Jean-Marc’s child  $TabletView=AlexPage2 \pau=750\He studies IT and likes meeting other developpers. $TabletView=AlexPage3 \pau=750\Alex lives in Lyon, with Lydie his sister and Chris his brother in law. $onFinished=1
+
+u:(e:onFinished) Would you like to have another go?
+    u1:(~yes) okay here we go \pau=600\ $PepperTablet/Reset=1
+    u1:(~no) okay, maybe we can try again another day $MemG/EndApp=1
