@@ -11,8 +11,8 @@ The reminder application is driven by google calendar (currently the calendar ID
 
 The grammar for the description field is:
 * Wake
-* Meal|<Mealtype> where Mealtype can be Breakfast, Lunch or Dinner
-* Visitor|family|<person name>|<relationship>
+* Meal|{Mealtype} where Mealtype can be Breakfast, Lunch or Dinner
+* Visitor|family|{person name}|<relationship>
 * Visitor|doctor
 * Visitor|helper
 * Medicine
